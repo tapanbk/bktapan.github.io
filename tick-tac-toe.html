@@ -12,7 +12,7 @@
             grid-template-rows: repeat(3, 1fr);
             gap: 8px;
             max-width: 320px;
-            margin: 30px auto;
+            margin: 10px auto;
             aspect-ratio: 1 / 1;
         }
 
@@ -29,13 +29,16 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* Hover effect */
         .cell:hover {
             transform: scale(1.05);
             box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
         }
 
-        /* Clicked effect */
+        .cell.blur {
+            filter: blur(1.2px);
+            opacity: 0.5;
+        }
+
         .cell.animated {
             animation: pop 0.3s ease;
         }
@@ -44,15 +47,6 @@
             0%   { transform: scale(0.7); opacity: 0.5; }
             60%  { transform: scale(1.2); opacity: 1; }
             100% { transform: scale(1); }
-        }
-
-        .cell.blink {
-            animation: blink 0.8s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
         }
 
         .cell.winner {
@@ -65,24 +59,71 @@
             pointer-events: none;
         }
 
+        #currentTurn {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
         #statusText {
             font-size: 1.25rem;
             font-weight: 500;
-            margin-top: 15px;
+            margin-top: 10px;
+        }
+
+        #endNote {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #6c757d;
+        }
+
+        .rules-section {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: left;
+        }
+
+        .rules-section h4 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .rules-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
 <div class="container text-center">
     <h2 class="mt-4">Tic-Tac-Toe (Max 3 Marks Each)</h2>
+
+    <div id="currentTurn" class="text-primary">Current Turn: X</div>
+
     <div class="board" id="board"></div>
     <div id="statusText" class="text-info"></div>
+    <div id="endNote"></div>
     <button class="btn btn-outline-secondary mt-3" onclick="resetGame()">Reset Game</button>
+
+    <!-- Game Rules Section -->
+    <div class="rules-section mt-5 text-start">
+        <h4>Game Rules</h4>
+        <ul>
+            <li>The game is played on a 3×3 grid.</li>
+            <li>Player 1 is <strong>X</strong> and Player 2 is <strong>O</strong>. They take turns placing their mark in empty cells.</li>
+            <li>The first player to get three of their marks in a horizontal, vertical, or diagonal row wins.</li>
+            <li><strong>Custom Rule:</strong> Each player can have a maximum of 3 marks on the board. When a fourth mark is placed, their oldest mark is removed.</li>
+            <li>The cell with a blur shows which mark will be removed next.</li>
+        </ul>
+    </div>
 </div>
 
 <script>
     const boardElement = document.getElementById('board');
     const statusText = document.getElementById('statusText');
+    const endNote = document.getElementById('endNote');
+    const currentTurnEl = document.getElementById('currentTurn');
+
     let board = Array(9).fill('');
     let turn = 'X';
     let gameOver = false;
@@ -101,6 +142,8 @@
 
     function createBoard() {
         boardElement.innerHTML = '';
+        endNote.innerText = '';
+        currentTurnEl.innerText = gameOver ? '' : `Current Turn: ${turn}`;
 
         for (let i = 0; i < 9; i++) {
             const cell = document.createElement('div');
@@ -110,18 +153,15 @@
             const mark = board[i];
             cell.innerText = mark;
 
-            // Highlight winning cells
             if (winnerCombo.includes(i)) {
                 cell.classList.add('winner');
             }
 
-            // Blink oldest mark of current player
             const oldestIndex = moves[turn].length === 3 ? parseInt(moves[turn][0]) : null;
             if (mark === turn && i === oldestIndex && !winnerCombo.includes(i)) {
-                cell.classList.add('blink');
+                cell.classList.add('blur');
             }
 
-            // Add click listener only if cell is empty and game is active
             if (!gameOver && mark === '') {
                 cell.onclick = (e) => {
                     handleMove(e);
@@ -139,28 +179,30 @@
         const index = parseInt(event.target.dataset.index);
         if (board[index] !== '') return;
 
-        // Remove oldest mark if already 3
         if (moves[turn].length >= 3) {
             const oldIndex = parseInt(moves[turn].shift());
             board[oldIndex] = '';
         }
 
-        // Place current move
         board[index] = turn;
         moves[turn].push(index);
 
-        // Check for winner
         const winning = checkWinner(turn);
         if (winning.length > 0) {
             winnerCombo = winning;
             gameOver = true;
             statusText.innerText = `${turn} wins! 🎉`;
+            endNote.innerText = `Winner is ${turn}. Game over!`;
             boardElement.classList.add('disabled');
+            currentTurnEl.innerText = '';
         } else if (board.every(cell => cell !== '')) {
             statusText.innerText = 'It\'s a draw!';
+            endNote.innerText = "It's a draw. Try again!";
             gameOver = true;
+            currentTurnEl.innerText = '';
         } else {
             turn = turn === 'X' ? 'O' : 'X';
+            currentTurnEl.innerText = `Current Turn: ${turn}`;
         }
 
         createBoard();
@@ -181,6 +223,8 @@
         gameOver = false;
         boardElement.classList.remove('disabled');
         statusText.innerText = '';
+        endNote.innerText = '';
+        currentTurnEl.innerText = 'Current Turn: X';
         createBoard();
     }
 
