@@ -1,0 +1,443 @@
+---
+// src/components/Navbar.astro
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Brand / Logo -->
+    <a href="#hero" class="brand" aria-label="Tapan B.K. - Return to top">
+      <div class="avatar-wrap">
+        <img src="/img/about/1.jpg" alt="Tapan B.K. avatar" width="40" height="40" class="avatar-img" />
+        <span class="status-indicator" title="Available for opportunities" aria-label="Available for work"></span>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">TAPAN B.K.</span>
+        <span class="brand-role">Full-Stack Engineer</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Primary Navigation">
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <!-- Dark/Light Theme Toggle Button -->
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme" title="Toggle theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </svg>
+      </button>
+
+      <a href="#contact" class="btn btn-primary btn-sm header-cta">
+        <span>Get in Touch</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="container mobile-menu-inner">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+
+      <div class="mobile-theme-row">
+        <span class="mobile-theme-label font-mono">Theme Mode</span>
+        <button id="mobile-theme-toggle" class="btn btn-secondary btn-sm mobile-theme-btn">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          <span class="theme-mode-text">Switch Mode</span>
+        </button>
+      </div>
+
+      <div class="mobile-menu-cta">
+        <a href="#contact" class="btn btn-primary" style="width: 100%;">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--header-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-card-border);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transition: background-color 200ms ease, border-color 200ms ease;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Brand */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .avatar-wrap {
+    position: relative;
+    width: 42px;
+    height: 42px;
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .status-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent);
+    border: 2px solid var(--color-background);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 8px var(--color-accent);
+    animation: statusPulse 2s infinite ease-in-out;
+  }
+
+  @keyframes statusPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-name {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    letter-spacing: 0.05em;
+    color: var(--color-foreground);
+    line-height: 1.2;
+  }
+
+  .brand-role {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+  }
+
+  /* Desktop Nav */
+  .desktop-nav {
+    display: none;
+  }
+
+  @media (min-width: 820px) {
+    .desktop-nav {
+      display: block;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    transition: all 180ms ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-foreground);
+    background-color: var(--badge-bg);
+  }
+
+  /* Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Theme Toggle Button */
+  .theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--badge-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-md);
+    color: var(--color-foreground);
+    transition: all 180ms ease;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .theme-toggle-btn:hover {
+    background: var(--color-accent-subtle);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+  }
+
+  .theme-toggle-btn svg,
+  .mobile-theme-btn svg {
+    pointer-events: none;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .header-cta {
+      display: inline-flex;
+    }
+  }
+
+  /* Mobile toggle */
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--badge-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-md);
+    color: var(--color-foreground);
+    padding: 0;
+    cursor: pointer;
+  }
+
+  @media (min-width: 820px) {
+    .mobile-toggle {
+      display: none;
+    }
+  }
+
+  /* Mobile menu dropdown */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-card-border);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-menu-inner {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-foreground);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    transition: background-color 150ms ease;
+  }
+
+  .mobile-nav-link:hover, .mobile-nav-link:focus {
+    background: var(--badge-bg);
+    color: var(--color-accent);
+  }
+
+  .mobile-theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 14px 0;
+    margin-top: 12px;
+    border-top: 1px dashed var(--color-card-border);
+  }
+
+  .mobile-theme-label {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+  }
+
+  .mobile-theme-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .mobile-menu-cta {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-card-border);
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    function initNavbar() {
+      // Mobile menu toggle
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = toggleBtn ? toggleBtn.querySelector('.icon-open') : null;
+      const iconClose = toggleBtn ? toggleBtn.querySelector('.icon-close') : null;
+
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.onclick = function() {
+          const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+          toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+          mobileMenu.classList.toggle('open');
+          mobileMenu.setAttribute('aria-hidden', String(isExpanded));
+
+          if (iconOpen && iconClose) {
+            iconOpen.style.display = isExpanded ? 'block' : 'none';
+            iconClose.style.display = isExpanded ? 'none' : 'block';
+          }
+        };
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(function(link) {
+          link.onclick = function() {
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.classList.remove('open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+            if (iconOpen && iconClose) {
+              iconOpen.style.display = 'block';
+              iconClose.style.display = 'none';
+            }
+          };
+        });
+      }
+
+      // Theme Toggle Functionality
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+          metaThemeColor.setAttribute('content', theme === 'dark' ? '#090D16' : '#F8FAFC');
+        }
+      }
+
+      function handleThemeToggle() {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+      }
+
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+
+      if (themeToggleBtn) {
+        themeToggleBtn.onclick = handleThemeToggle;
+      }
+      if (mobileThemeToggleBtn) {
+        mobileThemeToggleBtn.onclick = handleThemeToggle;
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavbar);
+    } else {
+      initNavbar();
+    }
+  })();
+</script>

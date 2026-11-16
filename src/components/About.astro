@@ -1,0 +1,328 @@
+---
+// src/components/About.astro
+---
+
+<section id="about" class="section-wrapper">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 16v-4"></path>
+          <path d="M12 8h.01"></path>
+        </svg>
+        <span>Profile & Background</span>
+      </div>
+      <h2 class="section-title">Engineering with Purpose & Precision</h2>
+      <p class="section-subtitle">A glimpse into my background, engineering philosophy, and day-to-day focus as a senior practitioner.</p>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="about-bento-grid">
+      <!-- Bento 1: Primary Story Card (Span 2) -->
+      <div class="bento-card bio-card">
+        <div class="card-glow-corner"></div>
+        <div class="bio-header">
+          <div class="bio-avatar-container">
+            <img src="/img/about/1.jpg" alt="Tapan B.K." class="bio-avatar" width="96" height="96" />
+          </div>
+          <div>
+            <h3 class="bio-name">Tapan B.K.</h3>
+            <p class="bio-tagline">Senior Full-Stack Engineer at <span class="highlight">Outcode LLC</span></p>
+            <div class="bio-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Patan Dhoka, Lalitpur, Nepal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bio-text">
+          <p>
+            I am a full stack software engineer working as a full-time engineer at <strong>OutCode LLC Nepal</strong>. For the past <strong>8+ years</strong>, I have designed, engineered, and maintained web systems that process mission-critical data with high reliability.
+          </p>
+          <p>
+            My engineering foundation started in PHP (Laravel and CodeIgniter) before deepening into <strong>Python (Django / Django REST Framework)</strong> and modern frontends including <strong>Angular and TypeScript</strong>. Over nearly a decade, I have architected cloud systems on AWS and GCP, integrated complex payment gateways (Stripe, Authorize.net), managed distributed relational and NoSQL databases, and led agile delivery cycles.
+          </p>
+          <p>
+            I take genuine pride in every phase of the engineering lifecycle: from collaborating on initial software requirements to writing clean, maintainable code and seeing projects thrive in production.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bento 2: Quick Information & Contact Details -->
+      <div class="bento-card meta-card">
+        <div class="card-glow-corner"></div>
+        <h3 class="card-title">Quick Information</h3>
+        <ul class="meta-list font-mono">
+          <li class="meta-item">
+            <span class="meta-key">Role:</span>
+            <span class="meta-val">Full-Stack Engineer</span>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Company:</span>
+            <span class="meta-val">Outcode LLC</span>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Location:</span>
+            <span class="meta-val">Lalitpur, Nepal</span>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Education:</span>
+            <span class="meta-val">MCS & BSc.CSIT</span>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Availability:</span>
+            <span class="meta-val highlight-green">Available</span>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Email:</span>
+            <a href="mailto:bktapan16@gmail.com" class="meta-val-link">bktapan16@gmail.com</a>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Phone:</span>
+            <a href="tel:+9779849716660" class="meta-val-link">+977-984-971-6660</a>
+          </li>
+          <li class="meta-item">
+            <span class="meta-key">Website:</span>
+            <a href="https://tapanbk.com.np" target="_blank" rel="noopener noreferrer" class="meta-val-link">tapanbk.com.np</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bento 3: Pillar 1 -->
+      <div class="bento-card pillar-card">
+        <div class="pillar-icon-wrap icon-cyan">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+            <path d="M9 3v18"></path>
+            <path d="m14 9 3 3-3 3"></path>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Scalable Backend Architecture</h3>
+        <p class="pillar-desc">
+          Specializing in Django, REST APIs, asynchronous queuing, and database query optimization for high-traffic environments.
+        </p>
+      </div>
+
+      <!-- Bento 4: Pillar 2 -->
+      <div class="bento-card pillar-card">
+        <div class="pillar-icon-wrap icon-green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2v20"></path>
+            <path d="m17 5-5-3-5 3"></path>
+            <path d="m17 19-5 3-5-3"></path>
+            <path d="M2 12h20"></path>
+            <path d="m5 7-3 5 3 5"></path>
+            <path d="m19 7 3 5-3 5"></path>
+          </svg>
+        </div>
+        <h3 class="pillar-title">End-to-End Ownership</h3>
+        <p class="pillar-desc">
+          Managing full lifecycles: from schema modeling, server provisioning (AWS/GCP), CI/CD pipelines to payment integrations.
+        </p>
+      </div>
+
+      <!-- Bento 5: Pillar 3 -->
+      <div class="bento-card pillar-card">
+        <div class="pillar-icon-wrap icon-purple">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Collaborative Leadership</h3>
+        <p class="pillar-desc">
+          Experienced in cross-functional agile teams (Jira, ClickUp), conducting rigorous code reviews, and mentoring upcoming engineers.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 960px) {
+    .about-bento-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bio-card {
+      grid-column: span 2;
+    }
+
+    .meta-card {
+      grid-column: span 1;
+    }
+  }
+
+  /* Bio card */
+  .bio-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .bio-avatar-container {
+    width: 88px;
+    height: 88px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+  }
+
+  .bio-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bio-name {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+  }
+
+  .bio-tagline {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+  }
+
+  .highlight {
+    color: var(--color-cyan);
+    font-weight: 600;
+  }
+
+  .highlight-green {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .bio-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    margin-top: 4px;
+  }
+
+  .bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 1px solid var(--color-card-border);
+    padding-top: var(--space-md);
+  }
+
+  .bio-text p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+
+  /* Meta Card */
+  .card-title {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-card-border);
+  }
+
+  .meta-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.8125rem;
+  }
+
+  .meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--color-card-border);
+  }
+
+  .meta-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .meta-key {
+    color: var(--color-muted);
+  }
+
+  .meta-val {
+    color: var(--color-foreground);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .meta-val-link {
+    color: var(--color-cyan);
+    transition: color 150ms ease;
+    text-align: right;
+  }
+
+  .meta-val-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  /* Pillar cards */
+  .pillar-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pillar-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-cyan {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .icon-green {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .icon-purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--color-purple);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+  }
+
+  .pillar-title {
+    font-size: 1.0625rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+</style>

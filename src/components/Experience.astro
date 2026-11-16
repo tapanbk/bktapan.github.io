@@ -1,0 +1,329 @@
+---
+// src/components/Experience.astro
+---
+
+<section id="experience" class="section-wrapper">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>Career Journey</span>
+      </div>
+      <h2 class="section-title">Experience & Education</h2>
+      <p class="section-subtitle">Over 8 years of continuous growth across leading software agencies, product platforms, and academic research.</p>
+    </div>
+
+    <div class="timeline-grid">
+      <!-- Left Column: Work Experience -->
+      <div class="timeline-column">
+        <div class="column-header">
+          <div class="column-icon work-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="column-title">Work Experience</h3>
+        </div>
+
+        <div class="timeline-track">
+          <!-- Job 1: Outcode LLC -->
+          <div class="timeline-card active-card">
+            <div class="card-status-pill">
+              <span class="status-pulse-dot"></span>
+              <span>Current Role</span>
+            </div>
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">Full-Stack Software Engineer</h4>
+                <div class="company-name highlight-accent">Outcode LLC Nepal</div>
+              </div>
+              <div class="timeline-date font-mono">Nov 2020 – Present</div>
+            </div>
+            <p class="role-desc">
+              Leading the architectural design and full-stack development of enterprise web applications and microservices. Collaborating with cross-functional international teams, mentoring junior engineers, and driving core product deliveries.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django / DRF</span>
+              <span class="tech-badge">Angular</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">AWS</span>
+              <span class="tech-badge">Stripe</span>
+            </div>
+          </div>
+
+          <!-- Job 2: Insight Workshop -->
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">Software Engineer</h4>
+                <div class="company-name">Insight Workshop Pvt Ltd</div>
+              </div>
+              <div class="timeline-date font-mono">June 2018 – Nov 2020</div>
+            </div>
+            <p class="role-desc">
+              Engineered scalable backend RESTful APIs, optimized complex relational queries, and implemented third-party service integrations including messaging (Twilio) and CRM systems.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Twilio</span>
+            </div>
+          </div>
+
+          <!-- Job 3: Slash Plus -->
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">Web Developer</h4>
+                <div class="company-name">Slash Plus</div>
+              </div>
+              <div class="timeline-date font-mono">March 2016 – June 2018</div>
+            </div>
+            <p class="role-desc">
+              Developed custom CMS and commercial web applications using PHP frameworks. Handled front-to-back development, database schema modeling, and client requirement analysis.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">CodeIgniter</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Education -->
+      <div class="timeline-column">
+        <div class="column-header">
+          <div class="column-icon edu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <h3 class="column-title">Educational Background</h3>
+        </div>
+
+        <div class="timeline-track">
+          <!-- Degree 1: Lincoln University MCS -->
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">Master of Computer Science (MCS)</h4>
+                <div class="company-name highlight-cyan">Lincoln University</div>
+              </div>
+              <div class="timeline-date font-mono">Apr 2021 – Apr 2023</div>
+            </div>
+            <p class="role-desc">
+              Advanced graduate studies focused on distributed software systems, advanced algorithm design, software architecture patterns, and research in computer science.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">Graduate Degree</span>
+              <span class="tech-badge">Software Engineering</span>
+              <span class="tech-badge">Distributed Systems</span>
+            </div>
+          </div>
+
+          <!-- Degree 2: TU Nepal BSc.CSIT -->
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">BSc. Computer Science & IT (BSc.CSIT)</h4>
+                <div class="company-name">Tribhuvan University (TU), Nepal</div>
+              </div>
+              <div class="timeline-date font-mono">2011 – 2015</div>
+            </div>
+            <p class="role-desc">
+              Comprehensive undergraduate program covering operating systems, compiler design, database management systems, computer networks, and programming paradigms.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">BSc.CSIT</span>
+              <span class="tech-badge">Computer Networks</span>
+              <span class="tech-badge">Data Structures</span>
+            </div>
+          </div>
+
+          <!-- Degree 3: NAST HSEB -->
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div>
+                <h4 class="role-title">+2 High School Science</h4>
+                <div class="company-name">NAST, HSEB Nepal</div>
+              </div>
+              <div class="timeline-date font-mono">2008 – 2012</div>
+            </div>
+            <p class="role-desc">
+              Secondary education with specialization in Mathematics and Physics, establishing foundational logical thinking and scientific principles.
+            </p>
+            <div class="role-tech-tags">
+              <span class="tech-badge">Mathematics</span>
+              <span class="tech-badge">Physics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  @media (min-width: 960px) {
+    .timeline-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Column Header */
+  .column-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .column-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-icon {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+  }
+
+  .edu-icon {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+  }
+
+  .column-title {
+    font-size: 1.25rem;
+    color: var(--color-foreground);
+  }
+
+  /* Timeline Track */
+  .timeline-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .timeline-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    position: relative;
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .timeline-card:hover {
+    border-color: var(--color-card-hover-border);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .active-card {
+    border-color: rgba(34, 197, 94, 0.35);
+    background: linear-gradient(180deg, rgba(34, 197, 94, 0.04) 0%, var(--color-card) 100%);
+  }
+
+  .card-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: var(--color-accent-subtle);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-accent);
+    font-size: 0.6875rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent);
+  }
+
+  .timeline-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .role-title {
+    font-size: 1.125rem;
+    color: var(--color-foreground);
+    margin-bottom: 2px;
+  }
+
+  .company-name {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+
+  .highlight-accent {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .highlight-cyan {
+    color: var(--color-cyan);
+    font-weight: 600;
+  }
+
+  .timeline-date {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    background: var(--badge-bg);
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--badge-border);
+    white-space: nowrap;
+  }
+
+  .role-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-body);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .role-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+</style>

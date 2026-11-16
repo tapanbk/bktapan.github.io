@@ -1,0 +1,119 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand font-mono">TAPAN B.K.</div>
+      <p class="footer-copy">
+        © {currentYear} Tapan B.K. • Full Stack Software Engineer.
+      </p>
+    </div>
+
+
+    <div class="footer-right">
+      <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top of page" title="Scroll to top">
+        <span>Back to Top</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m18 15-6-6-6 6"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-card-border);
+    padding: 32px 0;
+    background: var(--footer-bg);
+    transition: background-color 200ms ease;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-brand {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-foreground);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-copy {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+  }
+
+  .footer-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .engine-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+
+  .engine-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--color-card-border);
+    color: var(--color-muted);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    transition: all 180ms ease;
+  }
+
+  .back-to-top-btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    transform: translateY(-2px);
+  }
+</style>
+
+<script>
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>
