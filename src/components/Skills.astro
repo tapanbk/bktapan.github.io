@@ -1,0 +1,305 @@
+---
+// src/components/Skills.astro
+---
+
+<section id="skills" class="section-wrapper">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>Technical Arsenal</span>
+      </div>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Categorized competencies cultivated across 8+ years of production software development and cloud operations.</p>
+    </div>
+
+    <!-- Skills Bento Grid -->
+    <div class="skills-grid">
+      <!-- 1. Backend -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+              <path d="M7 7h10"></path>
+              <path d="M7 12h10"></path>
+              <path d="M7 17h10"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Backend Architecture</h3>
+            <span class="skill-group-tagline">Server logic, microservices & APIs</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Architecting resilient server applications with Python and PHP frameworks, handling heavy traffic, complex business logic, and third-party integrations.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Django</span>
+          <span class="tech-badge">Django REST Framework</span>
+          <span class="tech-badge">Laravel</span>
+          <span class="tech-badge">CodeIgniter</span>
+          <span class="tech-badge">RESTful APIs</span>
+          <span class="tech-badge">Swagger / Postman</span>
+          <span class="tech-badge">Twilio API</span>
+        </div>
+      </div>
+
+      <!-- 2. Frontend -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-cyan">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" x2="22" y1="12" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Frontend Engineering</h3>
+            <span class="skill-group-tagline">Fast, accessible & responsive web</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Building dynamic single-page applications and performant static/hybrid web apps with modern JavaScript/TypeScript frameworks and component design systems.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">Angular</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Astro</span>
+          <span class="tech-badge">JavaScript (ES6+)</span>
+          <span class="tech-badge">HTML5 / CSS3</span>
+          <span class="tech-badge">Responsive Design</span>
+          <span class="tech-badge">Material Design</span>
+          <span class="tech-badge">Bootstrap / Tailwind</span>
+        </div>
+      </div>
+
+      <!-- 3. Databases -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-purple">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+              <path d="M3 12A9 3 0 0 0 21 12"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Databases & Storage</h3>
+            <span class="skill-group-tagline">Relational, document & real-time DBs</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Designing scalable schemas, query optimization, data indexing, relational normalization, and real-time document stores for zero-data-loss integrity.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">MySQL</span>
+          <span class="tech-badge">Firebase Firestore</span>
+          <span class="tech-badge">Redis Caching</span>
+          <span class="tech-badge">Schema Optimization</span>
+          <span class="tech-badge">Database Migrations</span>
+        </div>
+      </div>
+
+      <!-- 4. Cloud & DevOps -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-orange">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Cloud Services & DevOps</h3>
+            <span class="skill-group-tagline">Deployment, servers & containerization</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Managing cloud platforms, automating container workflows with Docker, configuring high-performance web servers (Nginx/Apache), and Linux maintenance.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">Amazon Web Services (AWS)</span>
+          <span class="tech-badge">Google Cloud (GCP)</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Nginx</span>
+          <span class="tech-badge">Apache</span>
+          <span class="tech-badge">Linux (Ubuntu/Debian)</span>
+          <span class="tech-badge">CI/CD Automation</span>
+        </div>
+      </div>
+
+      <!-- 5. Payments & CRM -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+              <line x1="2" x2="22" y1="10" y2="10"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Payments & Third-Party APIs</h3>
+            <span class="skill-group-tagline">E-commerce, billing & marketing hooks</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Integrating secure PCI-compliant transaction processing, recurring subscriptions, customer onboarding workflows, and CRM marketing synchronizations.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">Stripe Payment Gateway</span>
+          <span class="tech-badge">Authorize.net</span>
+          <span class="tech-badge">Webhook Security</span>
+          <span class="tech-badge">Zoho CRM</span>
+          <span class="tech-badge">iContact</span>
+          <span class="tech-badge">Google Maps API</span>
+        </div>
+      </div>
+
+      <!-- 6. Management & Tools -->
+      <div class="bento-card skill-card">
+        <div class="card-glow-corner"></div>
+        <div class="skill-header">
+          <div class="skill-icon-wrap icon-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="skill-group-title">Leadership & Agile Workflow</h3>
+            <span class="skill-group-tagline">Collaboration, tracking & mentoring</span>
+          </div>
+        </div>
+        <p class="skill-description">
+          Practicing modern software engineering methodologies: version control workflows, structured ticket management, sprint planning, and thorough peer code reviews.
+        </p>
+        <div class="skill-badge-cloud">
+          <span class="tech-badge">Git & GitHub</span>
+          <span class="tech-badge">Jira</span>
+          <span class="tech-badge">ClickUp</span>
+          <span class="tech-badge">YouTrack</span>
+          <span class="tech-badge">Trello</span>
+          <span class="tech-badge">Agile / Scrum</span>
+          <span class="tech-badge">Peer Code Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: var(--space-md);
+  }
+
+  .skill-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-green {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .icon-cyan {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .icon-purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--color-purple);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+  }
+
+  .icon-orange {
+    background: rgba(249, 115, 22, 0.12);
+    color: #F97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  }
+
+  .icon-emerald {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10B981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .icon-blue {
+    background: rgba(59, 130, 246, 0.12);
+    color: #3B82F6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .skill-group-title {
+    font-size: 1.125rem;
+    color: var(--color-foreground);
+    line-height: 1.25;
+  }
+
+  .skill-group-tagline {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+
+  .skill-description {
+    font-size: 0.875rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+  }
+
+  .skill-badge-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-card-border);
+  }
+</style>
