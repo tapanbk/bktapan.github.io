@@ -6,7 +6,7 @@
   <div class="container hero-container">
     <div class="hero-grid">
       <!-- Left Column: Copy & CTAs -->
-      <div class="hero-content">
+      <div class="hero-content reveal-on-scroll">
         <!-- Live Status Badge -->
         <div class="hero-badge">
           <span class="badge-dot"></span>
@@ -43,64 +43,114 @@
           </a>
         </div>
 
-        <!-- Metric highlights -->
+        <!-- Metric highlights Bento Grid -->
         <div class="metrics-grid">
-          <div class="metric-item">
-            <div class="metric-value font-mono">8+</div>
+          <div class="metric-card reveal-on-scroll delay-100">
+            <div class="metric-top">
+              <span class="metric-icon-wrap icon-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </span>
+              <span class="metric-badge">Proven</span>
+            </div>
+            <div class="metric-value">8+</div>
             <div class="metric-label">Years Experience</div>
           </div>
-          <div class="metric-item">
-            <div class="metric-value font-mono">Nov 2020+</div>
+
+          <div class="metric-card reveal-on-scroll delay-150">
+            <div class="metric-top">
+              <span class="metric-icon-wrap icon-cyan">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </span>
+              <span class="metric-badge">Outcode</span>
+            </div>
+            <div class="metric-value">Nov 2020+</div>
             <div class="metric-label">Senior at Outcode</div>
           </div>
-          <div class="metric-item">
-            <div class="metric-value font-mono">MCS & BSc</div>
+
+          <div class="metric-card reveal-on-scroll delay-200">
+            <div class="metric-top">
+              <span class="metric-icon-wrap icon-purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-.838L12.83 3.18a2 2 0 0 0-1.66 0L2.6 10.084a1 1 0 0 0 0 1.832l8.57 6.908a2 2 0 0 0 1.66 0l8.57-6.9a1 1 0 0 0 .02-.002Z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </span>
+              <span class="metric-badge">Education</span>
+            </div>
+            <div class="metric-value">MCS & BSc</div>
             <div class="metric-label">Computer Science</div>
           </div>
-          <div class="metric-item">
-            <div class="metric-value font-mono">100%</div>
+
+          <div class="metric-card reveal-on-scroll delay-250">
+            <div class="metric-top">
+              <span class="metric-icon-wrap icon-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </span>
+              <span class="metric-badge">Delivery</span>
+            </div>
+            <div class="metric-value">100%</div>
             <div class="metric-label">Production Delivery</div>
           </div>
         </div>
       </div>
 
       <!-- Right Column: Interactive Dev Terminal Card -->
-      <div class="hero-terminal">
+      <div class="hero-terminal reveal-on-scroll delay-200">
         <div class="terminal-card font-mono">
-          <!-- Terminal Header -->
+          <!-- Editor Window / Tab Bar -->
           <div class="terminal-header">
             <div class="terminal-dots">
               <span class="dot dot-red"></span>
               <span class="dot dot-yellow"></span>
               <span class="dot dot-green"></span>
             </div>
-            <div class="terminal-title">tapan@dev: ~/profile.py</div>
-            <div class="terminal-lang">Python 3.12</div>
+            <div class="editor-tabs">
+              <div class="editor-tab active-tab">
+                <svg class="tab-py-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M11.91 0c-4.48 0-4.19 1.94-4.19 1.94l.01 2.01h4.26v.6H6.01S3 4.2 3 8.7c0 4.5 2.63 4.34 2.63 4.34h1.57v-2.17s-.08-2.58 2.54-2.58h4.39s2.46.04 2.46-2.4V4.35S16.99 0 11.91 0zm-2.3 1.25a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zm6.39 6.05v2.17s.08 2.58-2.54 2.58h-4.39s-2.46-.04-2.46 2.4v1.54s-.41 4.35 4.67 4.35c4.48 0 4.19-1.94 4.19-1.94l-.01-2.01h-4.26v-.6h5.98s3.01.35 3.01-4.15c0-4.5-2.63-4.34-2.63-4.34h-1.57zm-2.09 13.85a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z"/>
+                </svg>
+                <span>profile.py</span>
+                <span class="tab-close">×</span>
+              </div>
+            </div>
+            <div class="terminal-lang font-mono">Python 3.12</div>
           </div>
 
           <!-- Code Body -->
           <div class="terminal-body">
-            <pre class="terminal-code"><code><span class="code-comment"># Engineer Specification</span>
-<span class="code-keyword">class</span> <span class="code-class">FullStackEngineer</span>:
-    name = <span class="code-string">"Tapan B.K."</span>
-    title = <span class="code-string">"Full Stack Software Engineer"</span>
-    company = <span class="code-string">"Outcode LLC Nepal"</span>
-    location = <span class="code-string">"Patan Dhoka, Lalitpur, Nepal"</span>
-    status = <span class="code-string">"🟢 Active / Available"</span>
-    
-    core_stack = [
-        <span class="code-string">"Python / Django / DRF"</span>,
-        <span class="code-string">"Angular / Astro / TypeScript"</span>,
-        <span class="code-string">"PostgreSQL / MySQL / Firestore"</span>,
-        <span class="code-string">"AWS / Docker / Linux"</span>
-    ]
+            <pre class="terminal-code"><code><span class="code-keyword">from</span> dataclasses <span class="code-keyword">import</span> <span class="code-builtin">dataclass</span>
 
-    <span class="code-keyword">def</span> <span class="code-func">solve_problem</span>(self, requirements):
-        <span class="code-keyword">return</span> <span class="code-string">"Scalable, resilient & secure software."</span>
+<span class="code-decorator">@dataclass</span>
+<span class="code-keyword">class</span> <span class="code-class">Engineer</span>:
+    name: <span class="code-builtin">str</span> = <span class="code-string">"Tapan B.K."</span>
+    role: <span class="code-builtin">str</span> = <span class="code-string">"Senior Full-Stack Engineer"</span>
+    company: <span class="code-builtin">str</span> = <span class="code-string">"Outcode LLC"</span>
+    stack: <span class="code-builtin">tuple</span> = (<span class="code-string">"Python"</span>, <span class="code-string">"Django"</span>, <span class="code-string">"Angular"</span>, <span class="code-string">"AWS"</span>)
 
-<span class="code-prompt">$</span> python profile.py
-<span class="code-output">✓ 8+ years building high-impact tech.</span>
-<span class="code-output">✓ Ready for new challenges.</span>
+    <span class="code-keyword">def</span> <span class="code-func">summary</span>(<span class="code-param">self</span>) -&gt; <span class="code-builtin">str</span>:
+        <span class="code-keyword">return</span> <span class="code-string">f"&#123;self.name&#125; | &#123;self.role&#125; @ &#123;self.company&#125;"</span>
+
+    <span class="code-keyword">def</span> <span class="code-func">deploy</span>(<span class="code-param">self</span>) -&gt; <span class="code-builtin">str</span>:
+        techs = <span class="code-string">", "</span>.join(<span class="code-param">self</span>.stack)
+        <span class="code-keyword">return</span> <span class="code-string">f"✓ Scalable system built with &#123;techs&#125;"</span>
+
+<span class="code-keyword">if</span> __name__ == <span class="code-string">"__main__"</span>:
+    dev = <span class="code-class">Engineer</span>()
+    <span class="code-func">print</span>(dev.summary())
+    <span class="code-func">print</span>(dev.deploy())
+    <span class="code-func">print</span>(<span class="code-string">"✓ Ready for new architectural challenges"</span>)</code></pre>
+          </div>
+
+          <!-- Terminal Output Pane -->
+          <div class="terminal-drawer">
+            <div class="drawer-header">
+              <div class="drawer-tag font-mono">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                <span>TERMINAL</span>
+              </div>
+              <span class="drawer-path font-mono">~/tapan-bk</span>
+            </div>
+            <pre class="terminal-output-code"><code><span class="code-prompt">$</span> <span class="code-cmd">python profile.py</span>
+<span class="code-output">Tapan B.K. | Senior Full-Stack Engineer @ Outcode LLC</span>
+<span class="code-output"><span class="code-check">✓</span> Scalable system built with Python, Django, Angular, AWS</span>
+<span class="code-output"><span class="code-check">✓</span> Ready for new architectural challenges</span>
 <span class="code-prompt">$</span> <span class="code-cursor">█</span></code></pre>
           </div>
 
@@ -108,7 +158,7 @@
           <div class="terminal-footer">
             <div class="terminal-status">
               <span class="terminal-status-light"></span>
-              <span>REST API: 200 OK (14ms)</span>
+              <span>Python 3.12 • UTF-8</span>
             </div>
             <a href="mailto:bktapan16@gmail.com" class="terminal-mail-btn">
               <span>Ping Me</span>
@@ -156,7 +206,8 @@
     color: var(--color-accent);
     font-size: 0.8125rem;
     font-weight: 600;
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
     margin-bottom: var(--space-md);
   }
 
@@ -170,8 +221,12 @@
 
   /* Headline */
   .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
     margin-bottom: var(--space-md);
-    letter-spacing: -0.03em;
   }
 
   .gradient-text {
@@ -182,14 +237,17 @@
 
   .text-white {
     color: var(--color-foreground);
+    font-weight: 600;
   }
 
   .hero-description {
     font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--color-text-body);
-    line-height: 1.7;
+    line-height: 1.75;
+    letter-spacing: 0;
     margin-bottom: var(--space-xl);
-    max-width: 600px;
+    max-width: 62ch;
+    text-wrap: pretty;
   }
 
   /* CTA Group */
@@ -207,60 +265,132 @@
     padding: 0;
   }
 
-  /* Metrics Grid */
+  /* Metrics Bento Grid (2x2 grid for spacious layout) */
   .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-card-border);
   }
 
   @media (min-width: 640px) {
     .metrics-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
   }
 
-  .metric-item {
+  .metric-card {
     display: flex;
     flex-direction: column;
+    padding: 12px 14px;
+    background: var(--badge-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-md);
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  html[data-theme="light"] .metric-card {
+    background: #FFFFFF;
+    border-color: #E2E8F0;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  html[data-theme="light"] .metric-card:hover {
+    border-color: rgba(22, 163, 74, 0.4);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  }
+
+  .metric-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .metric-icon-wrap {
+    width: 26px;
+    height: 26px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .metric-icon-wrap.icon-green {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+  }
+
+  .metric-icon-wrap.icon-cyan {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+  }
+
+  .metric-icon-wrap.icon-purple {
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--color-purple);
+  }
+
+  .metric-badge {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .metric-value {
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     font-weight: 700;
     color: var(--color-foreground);
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
   }
 
   .metric-label {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--color-muted);
-    margin-top: 2px;
+    margin-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Terminal Card */
   .terminal-card {
-    background: var(--terminal-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #0D1525;
+    border: 1px solid rgba(56, 189, 248, 0.16);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg), 0 0 40px rgba(34, 197, 94, 0.08);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.65), 0 0 30px -5px rgba(56, 189, 248, 0.08);
     overflow: hidden;
     transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
   }
 
   .terminal-card:hover {
-    border-color: rgba(34, 197, 94, 0.3);
+    border-color: rgba(56, 189, 248, 0.35);
     transform: translateY(-2px);
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.75), 0 0 40px -5px rgba(56, 189, 248, 0.14);
   }
 
+  /* Terminal Header & Editor Tabs */
   .terminal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 16px;
-    background: var(--terminal-header-bg);
+    padding: 0 16px;
+    height: 42px;
+    background: #080E1B;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -280,37 +410,87 @@
   .dot-yellow { background: #F59E0B; }
   .dot-green { background: #10B981; }
 
-  .terminal-title {
+  .editor-tabs {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 4px;
+  }
+
+  .editor-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 100%;
+    padding: 0 14px;
     font-size: 0.75rem;
-    color: var(--color-muted);
+    font-family: var(--font-mono);
+    color: #94A3B8;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    transition: all 150ms ease;
+  }
+
+  .editor-tab.active-tab {
+    background: rgba(13, 21, 37, 0.85);
+    color: #F8FAFC;
+    border-bottom: 2px solid #38BDF8;
+    font-weight: 500;
+  }
+
+  .tab-py-icon {
+    color: #38BDF8;
+    flex-shrink: 0;
+  }
+
+  .tab-close {
+    font-size: 13px;
+    line-height: 1;
+    opacity: 0.45;
+    margin-left: 2px;
+    cursor: default;
   }
 
   .terminal-lang {
-    font-size: 0.75rem;
-    color: var(--color-subtle);
+    font-size: 0.6875rem;
+    color: #38BDF8;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(56, 189, 248, 0.2);
   }
 
   .terminal-body {
-    padding: 16px;
+    padding: 14px 16px;
     font-size: 0.8125rem;
-    line-height: 1.6;
+    line-height: 1.45;
     overflow-x: auto;
+    color: #E2E8F0;
+    background: #0D1525;
   }
 
   .terminal-code {
     margin: 0;
+    font-family: var(--font-mono);
+    font-feature-settings: 'zero' 1;
+    letter-spacing: -0.01em;
   }
 
-  /* Syntax Highlighting */
-  .code-comment { color: #64748B; }
-  .code-keyword { color: #F43F5E; font-weight: 600; }
-  .code-class { color: #38BDF8; font-weight: 600; }
-  .code-func { color: #A855F7; }
-  .code-string { color: #22C55E; }
-  .code-prompt { color: #38BDF8; }
-  .code-output { color: #E2E8F0; display: block; }
+  /* Refined Developer Dark Syntax Highlighting */
+  .code-comment { color: #64748B; font-style: italic; }
+  .code-keyword { color: #C084FC; font-weight: 600; }
+  .code-decorator { color: #38BDF8; font-weight: 500; }
+  .code-builtin { color: #67E8F9; }
+  .code-class { color: #60A5FA; font-weight: 600; }
+  .code-func { color: #93C5FD; }
+  .code-param { color: #FDA4AF; }
+  .code-string { color: #4ADE80; }
+  .code-prompt { color: #38BDF8; font-weight: 600; }
+  .code-cmd { color: #F8FAFC; font-weight: 600; }
+  .code-output { color: #CBD5E1; }
+  .code-check { color: #22C55E; font-weight: 700; }
   .code-cursor {
-    color: var(--color-accent);
+    color: #38BDF8;
     animation: blinkCursor 1s infinite steps(2, start);
   }
 
@@ -319,12 +499,49 @@
     50% { opacity: 0; }
   }
 
+  /* Terminal Drawer (Execution Output) */
+  .terminal-drawer {
+    background: #080E1B;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 16px;
+  }
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .drawer-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #38BDF8;
+    letter-spacing: 0.06em;
+  }
+
+  .drawer-path {
+    font-size: 0.6875rem;
+    color: #64748B;
+  }
+
+  .terminal-output-code {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.775rem;
+    line-height: 1.55;
+    color: #CBD5E1;
+  }
+
   .terminal-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 16px;
-    background: var(--terminal-header-bg);
+    padding: 8px 16px;
+    background: #080E1B;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.75rem;
   }
@@ -358,4 +575,100 @@
   .terminal-mail-btn:hover {
     background: rgba(34, 197, 94, 0.2);
   }
+
+  /* ==========================================================================
+     Light Mode Terminal Editor Theme (Authentic IDE in Light Mode)
+     ========================================================================== */
+  html[data-theme="light"] .terminal-card,
+  :root[data-theme="light"] .terminal-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  }
+
+  html[data-theme="light"] .terminal-card:hover,
+  :root[data-theme="light"] .terminal-card:hover {
+    border-color: rgba(22, 163, 74, 0.4);
+    box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.12), 0 0 25px -4px rgba(22, 163, 74, 0.1);
+  }
+
+  html[data-theme="light"] .terminal-header {
+    background: #F1F5F9;
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  html[data-theme="light"] .editor-tab {
+    color: #64748B;
+  }
+
+  html[data-theme="light"] .editor-tab.active-tab {
+    background: #FFFFFF;
+    color: #0F172A;
+    border-bottom: 2px solid #0284C7;
+  }
+
+  html[data-theme="light"] .tab-py-icon {
+    color: #0284C7;
+  }
+
+  html[data-theme="light"] .terminal-lang {
+    color: #0284C7;
+    background: rgba(2, 132, 199, 0.08);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+  }
+
+  html[data-theme="light"] .terminal-body {
+    background: #FFFFFF;
+    color: #1E293B;
+  }
+
+  html[data-theme="light"] .terminal-drawer {
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  html[data-theme="light"] .drawer-tag {
+    color: #0284C7;
+  }
+
+  html[data-theme="light"] .drawer-path {
+    color: #64748B;
+  }
+
+  html[data-theme="light"] .terminal-output-code {
+    color: #1E293B;
+  }
+
+  html[data-theme="light"] .terminal-footer {
+    background: #F1F5F9;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  html[data-theme="light"] .terminal-status {
+    color: #475569;
+  }
+
+  html[data-theme="light"] .terminal-mail-btn {
+    color: #16A34A;
+    background: rgba(22, 163, 74, 0.1);
+  }
+
+  html[data-theme="light"] .terminal-mail-btn:hover {
+    background: rgba(22, 163, 74, 0.2);
+  }
+
+  /* Light Theme Syntax Highlighting (High contrast, crisp typography) */
+  html[data-theme="light"] .code-comment { color: #64748B; font-style: italic; }
+  html[data-theme="light"] .code-keyword { color: #7C3AED; font-weight: 600; }
+  html[data-theme="light"] .code-decorator { color: #0284C7; font-weight: 500; }
+  html[data-theme="light"] .code-builtin { color: #0891B2; }
+  html[data-theme="light"] .code-class { color: #2563EB; font-weight: 600; }
+  html[data-theme="light"] .code-func { color: #0284C7; }
+  html[data-theme="light"] .code-param { color: #BE123C; }
+  html[data-theme="light"] .code-string { color: #15803D; }
+  html[data-theme="light"] .code-prompt { color: #0284C7; font-weight: 600; }
+  html[data-theme="light"] .code-cmd { color: #0F172A; font-weight: 600; }
+  html[data-theme="light"] .code-output { color: #334155; }
+  html[data-theme="light"] .code-check { color: #16A34A; font-weight: 700; }
+  html[data-theme="light"] .code-cursor { color: #0284C7; }
 </style>

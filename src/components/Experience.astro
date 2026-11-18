@@ -4,7 +4,7 @@
 
 <section id="experience" class="section-wrapper">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal-on-scroll">
       <div class="section-badge">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
@@ -12,39 +12,60 @@
         </svg>
         <span>Career Journey</span>
       </div>
-      <h2 class="section-title">Experience & Education</h2>
-      <p class="section-subtitle">Over 8 years of continuous growth across leading software agencies, product platforms, and academic research.</p>
+      <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
+      <p class="section-subtitle">Over 8 years of continuous growth across leading software agencies, product platforms, and academic institutions.</p>
     </div>
 
     <div class="timeline-grid">
       <!-- Left Column: Work Experience -->
-      <div class="timeline-column">
+      <div class="timeline-column work-column reveal-on-scroll delay-100" id="work-column">
         <div class="column-header">
           <div class="column-icon work-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             </svg>
           </div>
-          <h3 class="column-title">Work Experience</h3>
+          <div class="column-title-group">
+            <h3 class="column-title">Work Experience</h3>
+            <span class="column-subtitle">8+ Years Continuous Production Delivery</span>
+          </div>
         </div>
 
         <div class="timeline-track">
           <!-- Job 1: Outcode LLC -->
           <div class="timeline-card active-card">
-            <div class="card-status-pill">
-              <span class="status-pulse-dot"></span>
-              <span>Current Role</span>
-            </div>
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">Full-Stack Software Engineer</h4>
-                <div class="company-name highlight-accent">Outcode LLC Nepal</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-outcode">OL</div>
+                <div class="role-info">
+                  <h4 class="role-title">Full-Stack Software Engineer</h4>
+                  <div class="company-row">
+                    <span class="company-name highlight-accent">Outcode LLC Nepal</span>
+                    <span class="current-role-pill">
+                      <span class="status-pulse-dot"></span>
+                      <span>Current Role</span>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">Nov 2020 – Present</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>Nov 2020 – Present</span>
+                <span class="period-dot" aria-hidden="true">•</span>
+                <span class="period-duration">5+ Years</span>
+              </div>
             </div>
+
             <p class="role-desc">
-              Leading the architectural design and full-stack development of enterprise web applications and microservices. Collaborating with cross-functional international teams, mentoring junior engineers, and driving core product deliveries.
+              Leading full-stack architecture and microservices engineering for enterprise client applications. Collaborating with cross-functional international teams, mentoring engineers, and executing end-to-end production deliveries.
             </p>
+
+            <ul class="role-highlights">
+              <li>Architecting scalable backend microservices using Python, Django, and DRF.</li>
+              <li>Building reactive frontend web interfaces with Angular and TypeScript.</li>
+              <li>Integrating payment ecosystems (Stripe, Authorize.Net, PayPal) and AWS cloud infrastructure.</li>
+            </ul>
+
             <div class="role-tech-tags">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">Django / DRF</span>
@@ -58,15 +79,30 @@
           <!-- Job 2: Insight Workshop -->
           <div class="timeline-card">
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">Software Engineer</h4>
-                <div class="company-name">Insight Workshop Pvt Ltd</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-insight">IW</div>
+                <div class="role-info">
+                  <h4 class="role-title">Software Engineer</h4>
+                  <div class="company-name highlight-cyan">Insight Workshop Pvt Ltd</div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">June 2018 – Nov 2020</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>Jun 2018 – Nov 2020</span>
+                <span class="period-dot" aria-hidden="true">•</span>
+                <span class="period-duration">2.5 Years</span>
+              </div>
             </div>
+
             <p class="role-desc">
-              Engineered scalable backend RESTful APIs, optimized complex relational queries, and implemented third-party service integrations including messaging (Twilio) and CRM systems.
+              Engineered scalable backend RESTful APIs, optimized complex relational queries, and implemented third-party service integrations including messaging and CRM workflows.
             </p>
+
+            <ul class="role-highlights">
+              <li>Developed REST APIs handling high-throughput web requests.</li>
+              <li>Integrated Twilio SMS/voice gateways and external CRM APIs.</li>
+            </ul>
+
             <div class="role-tech-tags">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">Django</span>
@@ -79,15 +115,25 @@
           <!-- Job 3: Slash Plus -->
           <div class="timeline-card">
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">Web Developer</h4>
-                <div class="company-name">Slash Plus</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-slash">S+</div>
+                <div class="role-info">
+                  <h4 class="role-title">Web Developer</h4>
+                  <div class="company-name">Slash Plus</div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">March 2016 – June 2018</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>Mar 2016 – Jun 2018</span>
+                <span class="period-dot" aria-hidden="true">•</span>
+                <span class="period-duration">2+ Years</span>
+              </div>
             </div>
+
             <p class="role-desc">
-              Developed custom CMS and commercial web applications using PHP frameworks. Handled front-to-back development, database schema modeling, and client requirement analysis.
+              Developed custom CMS and commercial web applications. Handled front-to-back development, database schema modeling, and client requirement analysis.
             </p>
+
             <div class="role-tech-tags">
               <span class="tech-badge">PHP</span>
               <span class="tech-badge">Laravel</span>
@@ -100,7 +146,7 @@
       </div>
 
       <!-- Right Column: Education -->
-      <div class="timeline-column">
+      <div class="timeline-column edu-column reveal-on-scroll delay-200" id="edu-column">
         <div class="column-header">
           <div class="column-icon edu-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -108,60 +154,88 @@
               <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
             </svg>
           </div>
-          <h3 class="column-title">Educational Background</h3>
+          <div class="column-title-group">
+            <h3 class="column-title">Educational Background</h3>
+            <span class="column-subtitle">Masters & Bachelors Degrees</span>
+          </div>
         </div>
 
         <div class="timeline-track">
           <!-- Degree 1: Lincoln University MCS -->
           <div class="timeline-card">
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">Master of Computer Science (MCS)</h4>
-                <div class="company-name highlight-cyan">Lincoln University</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-lincoln">LU</div>
+                <div class="role-info">
+                  <h4 class="role-title">Master of Computer Science (MCS)</h4>
+                  <div class="company-name highlight-cyan">Lincoln University • Postgraduate</div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">Apr 2021 – Apr 2023</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>2021 – 2023</span>
+              </div>
             </div>
+
             <p class="role-desc">
               Advanced graduate studies focused on distributed software systems, advanced algorithm design, software architecture patterns, and research in computer science.
             </p>
+
             <div class="role-tech-tags">
-              <span class="tech-badge">Graduate Degree</span>
-              <span class="tech-badge">Software Engineering</span>
               <span class="tech-badge">Distributed Systems</span>
+              <span class="tech-badge">Algorithms</span>
+              <span class="tech-badge">Software Architecture</span>
             </div>
           </div>
 
           <!-- Degree 2: TU Nepal BSc.CSIT -->
           <div class="timeline-card">
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">BSc. Computer Science & IT (BSc.CSIT)</h4>
-                <div class="company-name">Tribhuvan University (TU), Nepal</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-tu">TU</div>
+                <div class="role-info">
+                  <h4 class="role-title">BSc. Computer Science & IT (BSc.CSIT)</h4>
+                  <div class="company-name">Tribhuvan University (TU), Nepal • Undergraduate</div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">2011 – 2015</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>2011 – 2015</span>
+              </div>
             </div>
+
             <p class="role-desc">
-              Comprehensive undergraduate program covering operating systems, compiler design, database management systems, computer networks, and programming paradigms.
+              Comprehensive 4-year undergraduate curriculum in computing theory, operating systems, compiler design, database architecture, and computer network protocols.
             </p>
+
             <div class="role-tech-tags">
-              <span class="tech-badge">BSc.CSIT</span>
+              <span class="tech-badge">Operating Systems</span>
               <span class="tech-badge">Computer Networks</span>
-              <span class="tech-badge">Data Structures</span>
+              <span class="tech-badge">Database Design</span>
+              <span class="tech-badge">C / C++</span>
             </div>
           </div>
 
           <!-- Degree 3: NAST HSEB -->
           <div class="timeline-card">
             <div class="timeline-header-row">
-              <div>
-                <h4 class="role-title">+2 High School Science</h4>
-                <div class="company-name">NAST, HSEB Nepal</div>
+              <div class="role-lead">
+                <div class="exp-avatar avatar-nast">NS</div>
+                <div class="role-info">
+                  <h4 class="role-title">+2 High School Science</h4>
+                  <div class="company-name">NAST, HSEB Nepal • High School</div>
+                </div>
               </div>
-              <div class="timeline-date font-mono">2008 – 2012</div>
+              <div class="timeline-period">
+                <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                <span>2008 – 2012</span>
+              </div>
             </div>
+
             <p class="role-desc">
               Secondary education with specialization in Mathematics and Physics, establishing foundational logical thinking and scientific principles.
             </p>
+
             <div class="role-tech-tags">
               <span class="tech-badge">Mathematics</span>
               <span class="tech-badge">Physics</span>
@@ -174,15 +248,74 @@
 </section>
 
 <style>
+  /* Grid Layout with Separator */
   .timeline-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: clamp(2rem, 5vw, 3.5rem);
+    gap: clamp(2.5rem, 5vw, 4rem);
+    position: relative;
   }
 
   @media (min-width: 960px) {
     .timeline-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(3.5rem, 6vw, 5rem);
+    }
+
+    /* Vertical Separating Line on Desktop */
+    .timeline-grid::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      bottom: 15px;
+      left: 50%;
+      width: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        180deg,
+        rgba(34, 197, 94, 0.45) 0%,
+        rgba(56, 189, 248, 0.35) 45%,
+        rgba(255, 255, 255, 0.05) 100%
+      );
+    }
+
+    /* Anchor Node on Desktop */
+    .timeline-grid::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      box-shadow: 0 0 8px var(--color-accent);
+      z-index: 2;
+    }
+  }
+
+  /* Horizontal Separating Line on Mobile */
+  @media (max-width: 959px) {
+    .work-column {
+      padding-bottom: clamp(2rem, 5vw, 3rem);
+      position: relative;
+    }
+
+    .work-column::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(34, 197, 94, 0.4) 25%,
+        rgba(56, 189, 248, 0.4) 75%,
+        transparent 100%
+      );
     }
   }
 
@@ -190,17 +323,18 @@
   .column-header {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: var(--space-lg);
   }
 
   .column-icon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
   }
 
   .work-icon {
@@ -215,9 +349,22 @@
     border: 1px solid rgba(56, 189, 248, 0.25);
   }
 
+  .column-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
   .column-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: var(--color-foreground);
+    line-height: 1.25;
+  }
+
+  .column-subtitle {
+    font-size: 0.75rem;
+    color: var(--color-muted);
   }
 
   /* Timeline Track */
@@ -248,31 +395,7 @@
     background: linear-gradient(180deg, rgba(34, 197, 94, 0.04) 0%, var(--color-card) 100%);
   }
 
-  .card-status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    background: var(--color-accent-subtle);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    border-radius: var(--radius-full);
-    color: var(--color-accent);
-    font-size: 0.6875rem;
-    font-family: var(--font-mono);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
-  }
-
-  .status-pulse-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    box-shadow: 0 0 6px var(--color-accent);
-  }
-
+  /* Header Row & Avatar */
   .timeline-header-row {
     display: flex;
     justify-content: space-between;
@@ -282,10 +405,83 @@
     flex-wrap: wrap;
   }
 
+  .role-lead {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .role-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .exp-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .avatar-outcode {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .avatar-insight {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+  }
+
+  .avatar-slash {
+    background: rgba(168, 85, 247, 0.12);
+    color: var(--color-purple);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+  }
+
+  .avatar-lincoln {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--color-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+  }
+
+  .avatar-tu {
+    background: rgba(245, 158, 11, 0.12);
+    color: #F59E0B;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  .avatar-nast {
+    background: rgba(148, 163, 184, 0.12);
+    color: #94A3B8;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+  }
+
   .role-title {
-    font-size: 1.125rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
     color: var(--color-foreground);
-    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+
+  .company-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 
   .company-name {
@@ -304,26 +500,192 @@
     font-weight: 600;
   }
 
-  .timeline-date {
+  .current-role-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent-subtle);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    color: var(--color-accent);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .status-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent);
+  }
+
+  .timeline-period {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
     font-size: 0.8125rem;
-    color: var(--color-subtle);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
     background: var(--badge-bg);
-    padding: 3px 10px;
-    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
     border: 1px solid var(--badge-border);
     white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .timeline-period:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .period-cal-icon {
+    color: var(--color-muted);
+    flex-shrink: 0;
+  }
+
+  .period-dot {
+    opacity: 0.4;
+    font-size: 0.75rem;
+    user-select: none;
+  }
+
+  .period-duration {
+    color: var(--color-foreground);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .active-card .timeline-period {
+    background: var(--color-accent-subtle);
+    border-color: rgba(34, 197, 94, 0.3);
+    color: var(--color-accent);
+  }
+
+  .active-card .timeline-period .period-cal-icon {
+    color: var(--color-accent);
+  }
+
+  .active-card .timeline-period .period-duration {
+    color: var(--color-accent);
   }
 
   .role-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .role-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .role-highlights li {
+    position: relative;
+    padding-left: 16px;
     font-size: 0.875rem;
     color: var(--color-text-body);
-    line-height: 1.65;
-    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .role-highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--color-accent);
+    font-weight: bold;
   }
 
   .role-tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+  }
+
+  /* Light Theme Specifics */
+  html[data-theme="light"] .timeline-card {
+    background: #FFFFFF;
+    border-color: #E2E8F0;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  }
+
+  html[data-theme="light"] .timeline-card:hover {
+    border-color: rgba(22, 163, 74, 0.4);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  }
+
+  html[data-theme="light"] .timeline-period {
+    background: #F1F5F9;
+    border-color: #E2E8F0;
+    color: #475569;
+  }
+
+  html[data-theme="light"] .timeline-period:hover {
+    background: #E2E8F0;
+    border-color: #CBD5E1;
+  }
+
+  html[data-theme="light"] .period-cal-icon {
+    color: #64748B;
+  }
+
+  html[data-theme="light"] .period-dot {
+    color: #94A3B8;
+  }
+
+  html[data-theme="light"] .period-duration {
+    color: #0F172A;
+  }
+
+  html[data-theme="light"] .active-card .timeline-period {
+    background: rgba(22, 163, 74, 0.08);
+    border-color: rgba(22, 163, 74, 0.25);
+    color: #166534;
+  }
+
+  html[data-theme="light"] .active-card .timeline-period .period-cal-icon {
+    color: #16A34A;
+  }
+
+  html[data-theme="light"] .active-card .timeline-period .period-duration {
+    color: #15803D;
+  }
+
+  html[data-theme="light"] .timeline-grid::after {
+    background: linear-gradient(
+      180deg,
+      rgba(22, 163, 74, 0.45) 0%,
+      rgba(2, 132, 199, 0.35) 45%,
+      rgba(203, 213, 225, 0.6) 100%
+    );
+  }
+
+  html[data-theme="light"] .timeline-grid::before {
+    background: #16A34A;
+    box-shadow: 0 0 6px rgba(22, 163, 74, 0.4);
+  }
+
+  html[data-theme="light"] .work-column::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(22, 163, 74, 0.4) 25%,
+      rgba(2, 132, 199, 0.4) 75%,
+      transparent 100%
+    );
   }
 </style>

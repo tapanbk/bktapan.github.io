@@ -4,11 +4,12 @@
    Dual-Theme Engine: Dark Mode (OLED) & Light Mode (Modern Clean)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Typography */
-  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography System — Plus Jakarta Sans for UI, Headings & Body for ultimate readability; JetBrains Mono for Code */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Spacing Scale (Density 6/10) */
@@ -60,8 +61,8 @@ html[data-theme="dark"],
   --color-accent-glow: rgba(34, 197, 94, 0.25);
   --color-accent-subtle: rgba(34, 197, 94, 0.12);
 
-  --color-foreground: #F8FAFC;
-  --color-text-body: #CBD5E1;
+  --color-foreground: #FFFFFF;
+  --color-text-body: #E2E8F0;
   --color-muted: #94A3B8;
   --color-subtle: #64748B;
   --color-border: #334155;
@@ -105,9 +106,9 @@ html[data-theme="light"],
   --color-accent-subtle: rgba(22, 163, 74, 0.1);
 
   --color-foreground: #0F172A;
-  --color-text-body: #334155;
-  --color-muted: #64748B;
-  --color-subtle: #94A3B8;
+  --color-text-body: #1E293B;  /* Deeper Slate-800 for high-contrast reading */
+  --color-muted: #475569;      /* Slate-600 with 7.2:1 contrast ratio */
+  --color-subtle: #64748B;     /* Slate-500 with 4.6:1 contrast ratio */
   --color-border: #E2E8F0;
 
   --header-bg: rgba(248, 250, 252, 0.88);
@@ -168,7 +169,10 @@ html {
 
 body {
   min-height: 100vh;
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  font-size: 1.03125rem;
+  line-height: 1.75;
+  letter-spacing: 0;
   background-color: var(--color-background);
   background-image: 
     radial-gradient(circle at 50% 0%, var(--bg-gradient-1) 0%, transparent 60%),
@@ -198,29 +202,50 @@ button, a, summary, [role="button"] {
   cursor: pointer;
 }
 
-/* Typography styles */
+/* Typography styles — Plus Jakarta Sans for Display and Body */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   color: var(--color-foreground);
   font-weight: 700;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 h1 {
   font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h2 {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 h3 {
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
 }
 
 p {
   color: var(--color-text-body);
+  line-height: 1.75;
+  letter-spacing: 0;
+  max-width: 72ch;
+  text-wrap: pretty;
 }
 
 a {
@@ -231,6 +256,7 @@ a {
 
 code, pre, .font-mono {
   font-family: var(--font-mono);
+  font-feature-settings: 'zero' 1;
 }
 
 /* Utility Containers */
@@ -264,23 +290,27 @@ code, pre, .font-mono {
   border: 1px solid rgba(34, 197, 94, 0.25);
   border-radius: var(--radius-full);
   color: var(--color-accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: var(--space-md);
 }
 
 .section-title {
+  font-family: var(--font-display);
   color: var(--color-foreground);
   margin-bottom: var(--space-sm);
+  text-wrap: balance;
 }
 
 .section-subtitle {
   color: var(--color-muted);
   font-size: clamp(1rem, 2vw, 1.125rem);
-  max-width: 650px;
+  line-height: 1.7;
+  max-width: 68ch;
+  text-wrap: pretty;
 }
 
 /* Glassmorphic & Bento Cards */
@@ -377,8 +407,10 @@ code, pre, .font-mono {
   background: var(--badge-bg);
   border: 1px solid var(--badge-border);
   border-radius: var(--radius-full);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--color-text-body);
   transition: all 180ms ease;
 }
@@ -409,6 +441,37 @@ code, pre, .font-mono {
   background: var(--color-subtle);
 }
 
+/* ==========================================================================
+   Scroll Reveal & Slide-Up Animation System
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delay Modifiers */
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-350 { transition-delay: 350ms; }
+.delay-400 { transition-delay: 400ms; }
+
+@media print {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Reduced Motion Support (Mandatory per UI/UX Pro Max) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -416,5 +479,10 @@ code, pre, .font-mono {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
