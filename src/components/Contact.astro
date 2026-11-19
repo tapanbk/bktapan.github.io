@@ -21,9 +21,9 @@
     <!-- 2-Column Split Bento Layout -->
     <div class="contact-grid">
       <!-- Left Column: Direct Channels & Presence -->
-      <div class="contact-left-col reveal-on-scroll delay-100">
+      <div class="contact-left-col">
         <!-- 1. Collaboration & Advisory Card -->
-        <div class="bento-card collaboration-card">
+        <div class="bento-card collaboration-card reveal-on-scroll delay-100">
           <div class="card-glow-corner"></div>
           <div class="collab-header">
             <span class="collab-badge">
@@ -57,7 +57,7 @@
         </div>
 
         <!-- 2. Single Unified Channels Container (Email, Phone, Base combined) -->
-        <div class="bento-card channels-master-card">
+        <div class="bento-card channels-master-card reveal-on-scroll delay-200">
           <div class="channels-master-header">
             <div class="channels-title-wrap">
               <div class="channel-dot-pulse"></div>
@@ -163,7 +163,7 @@
         </div>
 
         <!-- 3. Connect Across Networks (Simple with Icons) -->
-        <div class="bento-card social-simple-card">
+        <div class="bento-card social-simple-card reveal-on-scroll delay-250">
           <div class="social-simple-header">
             <span class="social-simple-label">Connect Across Networks</span>
             <span class="social-simple-meta">Direct Links</span>
@@ -220,8 +220,8 @@
       </div>
 
       <!-- Right Column: Direct WhatsApp & Instant Inquiry Dispatch (Replaces fake email form) -->
-      <div class="contact-right-col reveal-on-scroll delay-200">
-        <div class="bento-card inquiry-form-card">
+      <div class="contact-right-col">
+        <div class="bento-card inquiry-form-card reveal-on-scroll delay-150">
           <div class="card-glow-corner"></div>
 
           <div class="form-header">
@@ -329,26 +329,69 @@
 </section>
 
 <style>
-  /* 2-Column Split Grid */
+  /* 2-Column Split Grid / Mobile Reordering */
   .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-
-  @media (min-width: 960px) {
-    .contact-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-  }
-
-  /* Left Column */
-  .contact-left-col {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: stretch;
+  }
+
+  /* On mobile (< 960px):
+     display: contents unrolls the column containers so that all cards become direct flex children of .contact-grid.
+     This places Direct Communication Channels and Connect Across Networks at the very bottom on mobile devices! */
+  @media (max-width: 959px) {
+    .contact-left-col,
+    .contact-right-col {
+      display: contents;
+    }
+
+    /* 1. Collaboration & Advisory (at top) */
+    .collaboration-card {
+      order: 1;
+    }
+
+    /* 2. Direct WhatsApp & Instant Inquiry Form */
+    .inquiry-form-card {
+      order: 2;
+    }
+
+    /* 3. Direct Communication Channels (at bottom on mobile) */
+    .channels-master-card {
+      order: 3;
+    }
+
+    /* 4. Connect Across Networks (at bottom on mobile) */
+    .social-simple-card {
+      order: 4;
+    }
+  }
+
+  /* On desktop (>= 960px): Standard 2-column balanced split */
+  @media (min-width: 960px) {
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-right-col {
+      display: block;
+    }
+
+    .collaboration-card,
+    .inquiry-form-card,
+    .channels-master-card,
+    .social-simple-card {
+      order: unset;
+    }
   }
 
   /* Collaboration Card */
