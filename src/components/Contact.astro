@@ -279,23 +279,30 @@
               ></textarea>
             </div>
 
-            <!-- Action Buttons: WhatsApp Primary, Email Fallback, Copy Text -->
+            <!-- Action Buttons: WhatsApp Primary, Default Email Client, Copy Text -->
             <div class="form-actions">
-              <button type="submit" class="btn btn-whatsapp form-submit-btn" id="launch-whatsapp-btn">
+              <button type="submit" class="btn btn-whatsapp form-submit-btn" id="launch-whatsapp-btn" title="Launch direct WhatsApp chat">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.52 11.63c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.01-1.24-.74-.66-1.25-1.48-1.39-1.73-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.74 2.66 4.22 3.73.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/>
                 </svg>
                 <span>Chat on WhatsApp</span>
               </button>
 
-              <button type="button" class="btn btn-secondary form-email-btn" id="email-client-btn" title="Open mail app with pre-filled details">
+              <!-- Default Email Client (Native mailto: link, opens user's default email app) -->
+              <a 
+                href="mailto:bktapan16@gmail.com" 
+                class="btn btn-secondary form-email-btn" 
+                id="email-client-btn" 
+                title="Open in default email client"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                 </svg>
                 <span>Email Client</span>
-              </button>
+              </a>
 
+              <!-- Copy Note to Clipboard -->
               <button type="button" class="btn btn-secondary form-copy-btn" id="copy-draft-btn" title="Copy formatted note to clipboard">
                 <svg class="copy-draft-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
@@ -312,7 +319,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
-              <span>Direct 1-click WhatsApp redirect. Opens WhatsApp app or Web instantly. Zero backend tracking.</span>
+              <span>Direct 1-click WhatsApp redirect or default email client. Zero backend tracking.</span>
             </div>
           </form>
         </div>
@@ -573,8 +580,8 @@
 
   .channel-action-btn {
     position: relative;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-sm);
     background: var(--color-card);
     border: 1px solid var(--color-card-border);
@@ -583,22 +590,41 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 150ms ease;
+    transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 160ms ease,
+                border-color 160ms ease,
+                color 160ms ease,
+                box-shadow 200ms ease;
     padding: 0;
     text-decoration: none;
   }
 
+  .channel-action-btn svg {
+    transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+  }
+
   .channel-action-btn:hover {
     background: var(--color-accent-subtle);
-    border-color: rgba(34, 197, 94, 0.4);
+    border-color: rgba(34, 197, 94, 0.5);
     color: var(--color-accent);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -2px rgba(34, 197, 94, 0.25);
+  }
+
+  .channel-action-btn:hover svg {
+    transform: scale(1.15);
+  }
+
+  .channel-action-btn:active {
+    transform: translateY(0) scale(0.96);
   }
 
   .channel-action-btn.action-whatsapp:hover {
-    background: rgba(37, 211, 102, 0.12);
-    border-color: rgba(37, 211, 102, 0.4);
+    background: rgba(37, 211, 102, 0.15);
+    border-color: rgba(37, 211, 102, 0.55);
     color: #25D366;
+    box-shadow: 0 6px 14px -2px rgba(37, 211, 102, 0.3);
   }
 
   .timezone-pill {
@@ -611,43 +637,100 @@
     white-space: nowrap;
   }
 
-  /* Tooltip for copy button */
+  /* Universal modern tooltip bubble with downward caret */
   .tooltip-bubble {
     position: absolute;
-    bottom: calc(100% + 6px);
+    bottom: calc(100% + 9px);
     left: 50%;
-    transform: translateX(-50%) translateY(4px);
-    background: var(--color-primary);
+    transform: translateX(-50%) translateY(5px) scale(0.92);
+    background: #0B132B;
     color: #FFFFFF;
     font-family: var(--font-sans);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.6875rem;
-    padding: 3px 7px;
-    border-radius: var(--radius-sm);
+    letter-spacing: 0.02em;
+    padding: 4px 9px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     white-space: nowrap;
     pointer-events: none;
     opacity: 0;
-    transition: all 150ms ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    visibility: hidden;
+    transition: opacity 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1), visibility 180ms ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    z-index: 30;
+  }
+
+  .tooltip-bubble::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: #0B132B transparent transparent transparent;
   }
 
   .channel-action-btn:hover .tooltip-bubble,
   .channel-action-btn.copied .tooltip-bubble {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    visibility: visible;
+    transform: translateX(-50%) translateY(-2px) scale(1);
+  }
+
+  /* For social buttons: position tooltip bubble below the button with upward caret so it never overlaps the card header */
+  .social-icon-btn .tooltip-bubble {
+    top: calc(100% + 9px);
+    bottom: auto;
+    transform: translateX(-50%) translateY(-5px) scale(0.92);
+  }
+
+  .social-icon-btn .tooltip-bubble::after {
+    top: auto;
+    bottom: 100%;
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent #0B132B transparent;
+  }
+
+  .social-icon-btn:hover .tooltip-bubble,
+  .social-icon-btn:focus-visible .tooltip-bubble {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(2px) scale(1);
+  }
+
+  html[data-theme="light"] .tooltip-bubble {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #334155;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.2);
+  }
+
+  html[data-theme="light"] .tooltip-bubble::after {
+    border-color: #0F172A transparent transparent transparent;
+  }
+
+  html[data-theme="light"] .social-icon-btn .tooltip-bubble::after {
+    border-color: transparent transparent #0F172A transparent;
   }
 
   /* ==========================================================================
      Connect Across Networks (Simple with Icons)
      ========================================================================== */
   .social-simple-card {
-    padding: 16px 20px;
+    padding: 18px 22px 24px;
     background: var(--contact-card-bg);
     border: 1px solid var(--color-card-border);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    overflow: visible; /* Prevents tooltips and elevated hover states from clipping */
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .social-simple-card:hover {
+    border-color: rgba(56, 189, 248, 0.35);
   }
 
   .social-simple-header {
@@ -672,65 +755,102 @@
   .social-icons-row {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
+  }
+
+  /* Sibling focus: lightly soften non-hovered icons when browsing the row */
+  .social-icons-row:hover .social-icon-btn:not(:hover) {
+    opacity: 0.65;
+    transform: scale(0.97);
   }
 
   .social-icon-btn {
     position: relative;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-md);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     background: var(--badge-bg);
     border: 1px solid var(--color-card-border);
     color: var(--color-text-body);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+                background 200ms ease,
+                border-color 200ms ease,
+                color 200ms ease,
+                box-shadow 220ms ease,
+                opacity 200ms ease;
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  .social-icon-btn svg {
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
   }
 
   .social-icon-btn:hover {
-    transform: translateY(-2px);
-    border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px) scale(1.06);
+    z-index: 5;
   }
 
-  .social-icon-btn.btn-gh:hover { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.08); }
-  .social-icon-btn.btn-li:hover { color: #0A66C2; border-color: rgba(10, 102, 194, 0.5); background: rgba(10, 102, 194, 0.1); }
-  .social-icon-btn.btn-wa:hover { color: #25D366; border-color: rgba(37, 211, 102, 0.5); background: rgba(37, 211, 102, 0.1); }
-  .social-icon-btn.btn-x:hover { color: #38BDF8; border-color: rgba(56, 189, 248, 0.5); background: rgba(56, 189, 248, 0.1); }
-  .social-icon-btn.btn-web:hover { color: var(--color-accent); border-color: rgba(34, 197, 94, 0.5); background: var(--color-accent-subtle); }
+  .social-icon-btn:hover svg {
+    transform: scale(1.18);
+  }
 
-  .social-icon-btn .tooltip-bubble {
-    position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translateX(-50%) translateY(4px);
-    background: var(--color-primary);
+  .social-icon-btn:active {
+    transform: translateY(-1px) scale(0.97);
+    transition-duration: 75ms;
+  }
+
+  .social-icon-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  /* --- Brand-Specific Hover Signatures (Dark Mode) --- */
+  .social-icon-btn.btn-gh:hover {
     color: #FFFFFF;
-    font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 0.6875rem;
-    padding: 3px 7px;
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
-    pointer-events: none;
-    opacity: 0;
-    transition: all 150ms ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+    box-shadow: 0 10px 24px -2px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.4);
   }
 
-  .social-icon-btn:hover .tooltip-bubble {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  .social-icon-btn.btn-li:hover {
+    color: #38BDF8;
+    border-color: rgba(10, 102, 194, 0.65);
+    background: radial-gradient(circle at 50% 0%, rgba(10, 102, 194, 0.28), rgba(10, 102, 194, 0.08));
+    box-shadow: 0 10px 24px -2px rgba(10, 102, 194, 0.45), 0 4px 10px rgba(0, 0, 0, 0.4);
   }
 
+  .social-icon-btn.btn-wa:hover {
+    color: #25D366;
+    border-color: rgba(37, 211, 102, 0.65);
+    background: radial-gradient(circle at 50% 0%, rgba(37, 211, 102, 0.28), rgba(37, 211, 102, 0.08));
+    box-shadow: 0 10px 24px -2px rgba(37, 211, 102, 0.45), 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .social-icon-btn.btn-x:hover {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+    box-shadow: 0 10px 24px -2px rgba(255, 255, 255, 0.18), 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .social-icon-btn.btn-web:hover {
+    color: var(--color-accent);
+    border-color: rgba(34, 197, 94, 0.65);
+    background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.28), rgba(34, 197, 94, 0.08));
+    box-shadow: 0 10px 24px -2px rgba(34, 197, 94, 0.45), 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* --- Light Theme Social Styling & Hover Enhancements --- */
   html[data-theme="light"] .social-simple-card {
     background: #FFFFFF;
     border-color: #E2E8F0;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   }
 
   html[data-theme="light"] .social-icon-btn {
@@ -739,9 +859,44 @@
     color: #334155;
   }
 
-  html[data-theme="light"] .social-icon-btn:hover {
-    background: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  /* GitHub Light Mode Hover: high-contrast dark badge with white icon */
+  html[data-theme="light"] .social-icon-btn.btn-gh:hover {
+    color: #FFFFFF;
+    background: #181717;
+    border-color: #181717;
+    box-shadow: 0 10px 24px -2px rgba(24, 23, 23, 0.35), 0 4px 8px rgba(24, 23, 23, 0.12);
+  }
+
+  /* LinkedIn Light Mode Hover: official LinkedIn blue with tinted background */
+  html[data-theme="light"] .social-icon-btn.btn-li:hover {
+    color: #0A66C2;
+    background: #EFF6FF;
+    border-color: rgba(10, 102, 194, 0.55);
+    box-shadow: 0 10px 24px -2px rgba(10, 102, 194, 0.28), 0 4px 8px rgba(10, 102, 194, 0.1);
+  }
+
+  /* WhatsApp Light Mode Hover: vibrant WhatsApp green with tinted background */
+  html[data-theme="light"] .social-icon-btn.btn-wa:hover {
+    color: #16A34A;
+    background: #F0FDF4;
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 10px 24px -2px rgba(22, 163, 74, 0.3), 0 4px 8px rgba(22, 163, 74, 0.1);
+  }
+
+  /* X / Twitter Light Mode Hover: sleek dark badge with crisp white icon */
+  html[data-theme="light"] .social-icon-btn.btn-x:hover {
+    color: #FFFFFF;
+    background: #0F172A;
+    border-color: #0F172A;
+    box-shadow: 0 10px 24px -2px rgba(15, 23, 42, 0.35), 0 4px 8px rgba(15, 23, 42, 0.12);
+  }
+
+  /* Website Light Mode Hover: crisp emerald accent with tinted background */
+  html[data-theme="light"] .social-icon-btn.btn-web:hover {
+    color: #15803D;
+    background: #F0FDF4;
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 10px 24px -2px rgba(22, 163, 74, 0.3), 0 4px 8px rgba(22, 163, 74, 0.1);
   }
 
   /* ==========================================================================
@@ -939,6 +1094,7 @@
     border: 1px solid var(--color-card-border);
     color: var(--color-text-body);
     border-radius: var(--radius-md);
+    text-decoration: none;
     transition: all 150ms ease;
   }
 
@@ -948,6 +1104,7 @@
     border-color: var(--color-card-hover-border);
     color: var(--color-foreground);
     transform: translateY(-1px);
+    text-decoration: none;
   }
 
   .form-note {
@@ -1038,19 +1195,11 @@
   const topicChips = document.querySelectorAll('.topic-chip');
   let selectedTopic = 'Senior Full-Stack Role';
 
-  topicChips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      topicChips.forEach((c) => c.classList.remove('active'));
-      chip.classList.add('active');
-      selectedTopic = chip.getAttribute('data-topic') || 'Inquiry';
-    });
-  });
-
-  // 3. Message Helper
+  // 3. Message & Mailto Helper
   const nameInput = document.getElementById('inquiry-name') as HTMLInputElement;
   const messageInput = document.getElementById('inquiry-message') as HTMLTextAreaElement;
   const whatsappForm = document.getElementById('whatsapp-inquiry-form') as HTMLFormElement;
-  const emailClientBtn = document.getElementById('email-client-btn');
+  const emailClientBtn = document.getElementById('email-client-btn') as HTMLAnchorElement;
   const copyDraftBtn = document.getElementById('copy-draft-btn');
 
   function getMessagePayload() {
@@ -1070,6 +1219,32 @@
     return { name, msg, text };
   }
 
+  function updateMailtoLink() {
+    if (!emailClientBtn) return;
+    const { name, text } = getMessagePayload();
+    const subject = `[Inquiry: ${selectedTopic}]${name ? ' from ' + name : ''}`;
+    // Standard RFC 6068 CRLF encoding for universal mail client compatibility
+    const crlfText = text.replace(/\n/g, '\r\n');
+    const mailtoUrl = `mailto:bktapan16@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(crlfText)}`;
+    emailClientBtn.setAttribute('href', mailtoUrl);
+  }
+
+  topicChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      topicChips.forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+      selectedTopic = chip.getAttribute('data-topic') || 'Inquiry';
+      updateMailtoLink();
+    });
+  });
+
+  // Keep mailto href synchronized whenever form fields change
+  if (nameInput) nameInput.addEventListener('input', updateMailtoLink);
+  if (messageInput) messageInput.addEventListener('input', updateMailtoLink);
+
+  // Initialize mailto href immediately on load
+  updateMailtoLink();
+
   // 4. WhatsApp Direct Launch
   if (whatsappForm) {
     whatsappForm.addEventListener('submit', (e) => {
@@ -1080,13 +1255,22 @@
     });
   }
 
-  // 5. Email Fallback
+  // 5. Default Email Client Launch
   if (emailClientBtn) {
+    // Ensure href is up to date immediately before click/navigation
+    emailClientBtn.addEventListener('pointerdown', updateMailtoLink);
     emailClientBtn.addEventListener('click', () => {
-      const { name, text } = getMessagePayload();
-      const subject = `[Inquiry: ${selectedTopic}]${name ? ' from ' + name : ''}`;
-      const mailtoUrl = `mailto:bktapan16@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
-      window.location.href = mailtoUrl;
+      updateMailtoLink();
+
+      // Visual feedback on click
+      const prevBorder = emailClientBtn.style.borderColor;
+      const prevColor = emailClientBtn.style.color;
+      emailClientBtn.style.borderColor = 'var(--color-accent)';
+      emailClientBtn.style.color = 'var(--color-accent)';
+      setTimeout(() => {
+        emailClientBtn.style.borderColor = prevBorder;
+        emailClientBtn.style.color = prevColor;
+      }, 2000);
     });
   }
 
