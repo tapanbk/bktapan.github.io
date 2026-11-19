@@ -1,6 +1,9 @@
 ---
 // src/layouts/Layout.astro
 import '../styles/global.css';
+import { getYearsOfExperience } from '../utils/experience';
+
+const dynamicExpYears = getYearsOfExperience();
 
 interface Props {
   title?: string;
@@ -9,7 +12,7 @@ interface Props {
 
 const { 
   title = "Tapan B.K. | Full Stack Software Engineer",
-  description = "Tapan B.K. is a senior Full Stack Software Engineer at Outcode LLC with 8+ years experience in Python, Django, Angular, cloud infrastructure, and distributed web platforms."
+  description = `Tapan B.K. is a senior Full Stack Software Engineer at Outcode LLC with ${dynamicExpYears}+ years experience in Python, Django, Angular, cloud infrastructure, and distributed web platforms.`
 } = Astro.props;
 ---
 
@@ -102,10 +105,35 @@ const {
         });
       }
 
+      function syncDynamicExperience() {
+        var currentYear = new Date().getFullYear();
+        var expYears = Math.max(1, currentYear - 2016);
+        var outcodeYears = Math.max(1, currentYear - 2020);
+        document.querySelectorAll('[data-dynamic-exp="years"]').forEach(function(el) {
+          el.textContent = String(expYears);
+        });
+        document.querySelectorAll('[data-dynamic-exp="badge"]').forEach(function(el) {
+          el.textContent = expYears + '+';
+        });
+        document.querySelectorAll('[data-dynamic-exp="badge-years"]').forEach(function(el) {
+          el.textContent = expYears + '+ Years';
+        });
+        document.querySelectorAll('[data-dynamic-exp="badge-years-text"]').forEach(function(el) {
+          el.textContent = expYears + '+ years';
+        });
+        document.querySelectorAll('[data-dynamic-exp="outcode-years"]').forEach(function(el) {
+          el.textContent = outcodeYears + '+ Years';
+        });
+      }
+
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupScrollReveal);
+        document.addEventListener('DOMContentLoaded', function() {
+          setupScrollReveal();
+          syncDynamicExperience();
+        });
       } else {
         setupScrollReveal();
+        syncDynamicExperience();
       }
     })();
   </script>

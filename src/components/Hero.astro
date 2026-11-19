@@ -1,5 +1,8 @@
 ---
 // src/components/Hero.astro
+import { getYearsOfExperience } from '../utils/experience';
+
+const yearsExperience = getYearsOfExperience();
 ---
 
 <section id="hero" class="hero-section">
@@ -18,7 +21,7 @@
         </h1>
 
         <p class="hero-description">
-          Hi, I'm <strong class="text-white">Tapan B.K.</strong> — a Full-Stack Software Engineer with over 8 years of professional experience building scalable distributed systems, RESTful microservices, and reactive frontends across Nepal and global teams.
+          Hi, I'm <strong class="text-white">Tapan B.K.</strong> — a Full-Stack Software Engineer with over <span data-dynamic-exp="years">{yearsExperience}</span> years of professional experience building scalable distributed systems, RESTful microservices, and reactive frontends across Nepal and global teams.
         </p>
 
         <!-- CTA Action Group -->
@@ -52,7 +55,7 @@
               </span>
               <span class="metric-badge">Proven</span>
             </div>
-            <div class="metric-value">8+</div>
+            <div class="metric-value" data-dynamic-exp="badge">{yearsExperience}+</div>
             <div class="metric-label">Years Experience</div>
           </div>
 

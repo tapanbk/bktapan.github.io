@@ -1,5 +1,8 @@
 ---
 // src/components/Skills.astro
+import { getYearsOfExperience } from '../utils/experience';
+
+const yearsExperience = getYearsOfExperience();
 ---
 
 <section id="skills" class="section-wrapper">
@@ -13,7 +16,7 @@
         <span>Technical Arsenal</span>
       </div>
       <h2 class="section-title">Skills & Technologies</h2>
-      <p class="section-subtitle">Categorized competencies cultivated across 8+ years of production software development and cloud operations.</p>
+      <p class="section-subtitle">Categorized competencies cultivated across <span data-dynamic-exp="badge-years-text">{yearsExperience}+ years</span> of production software development and cloud operations.</p>
     </div>
 
     <!-- Skills Bento Grid -->

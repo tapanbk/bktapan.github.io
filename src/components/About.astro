@@ -1,5 +1,8 @@
 ---
 // src/components/About.astro
+import { getYearsOfExperience } from '../utils/experience';
+
+const yearsExperience = getYearsOfExperience();
 ---
 
 <section id="about" class="section-wrapper">
@@ -41,7 +44,7 @@
 
         <div class="bio-text">
           <p>
-            I am a full stack software engineer working as a full-time engineer at <strong>OutCode LLC Nepal</strong>. For the past <strong>8+ years</strong>, I have designed, engineered, and maintained web systems that process mission-critical data with high reliability.
+            I am a full stack software engineer working as a full-time engineer at <strong>OutCode LLC Nepal</strong>. For the past <strong><span data-dynamic-exp="badge-years-text">{yearsExperience}+ years</span></strong>, I have designed, engineered, and maintained web systems that process mission-critical data with high reliability.
           </p>
           <p>
             My engineering foundation started in PHP (Laravel and CodeIgniter) before deepening into <strong>Python (Django / Django REST Framework)</strong> and modern frontends including <strong>Angular and TypeScript</strong>. Over nearly a decade, I have architected cloud systems on AWS and GCP, integrated complex payment gateways (Stripe, Authorize.net), managed distributed relational and NoSQL databases, and led agile delivery cycles.

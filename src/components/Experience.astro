@@ -1,5 +1,9 @@
 ---
 // src/components/Experience.astro
+import { getYearsOfExperience, getOutcodeTenureYears } from '../utils/experience';
+
+const yearsExperience = getYearsOfExperience();
+const outcodeTenureYears = getOutcodeTenureYears();
 ---
 
 <section id="experience" class="section-wrapper">
@@ -13,7 +17,7 @@
         <span>Career Journey</span>
       </div>
       <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
-      <p class="section-subtitle">Over 8 years of continuous growth across leading software agencies, product platforms, and academic institutions.</p>
+      <p class="section-subtitle">Over <span data-dynamic-exp="years">{yearsExperience}</span> years of continuous growth across leading software agencies, product platforms, and academic institutions.</p>
     </div>
 
     <div class="timeline-grid">
@@ -27,7 +31,7 @@
           </div>
           <div class="column-title-group">
             <h3 class="column-title">Work Experience</h3>
-            <span class="column-subtitle">8+ Years Continuous Production Delivery</span>
+            <span class="column-subtitle"><span data-dynamic-exp="badge-years">{yearsExperience}+ Years</span> Continuous Production Delivery</span>
           </div>
         </div>
 
@@ -52,7 +56,7 @@
                 <svg class="period-cal-icon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
                 <span>Nov 2020 – Present</span>
                 <span class="period-dot" aria-hidden="true">•</span>
-                <span class="period-duration">5+ Years</span>
+                <span class="period-duration" data-dynamic-exp="outcode-years">{outcodeTenureYears}+ Years</span>
               </div>
             </div>
 
