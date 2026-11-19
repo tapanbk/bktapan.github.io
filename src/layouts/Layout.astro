@@ -81,6 +81,11 @@ const {
           return;
         }
 
+        // Immediately reveal hero above-the-fold elements so they don't wait for scroll
+        document.querySelectorAll('#hero .reveal-on-scroll').forEach(function(el) {
+          el.classList.add('is-revealed');
+        });
+
         if (!('IntersectionObserver' in window)) {
           document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
             el.classList.add('is-revealed');
@@ -96,11 +101,11 @@ const {
             }
           });
         }, {
-          threshold: 0.08,
-          rootMargin: '0px 0px -40px 0px'
+          threshold: 0.05,
+          rootMargin: '0px 0px 40px 0px'
         });
 
-        document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+        document.querySelectorAll('.reveal-on-scroll:not(.is-revealed)').forEach(function(el) {
           revealObserver.observe(el);
         });
       }
